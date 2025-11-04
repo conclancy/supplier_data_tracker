@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Tracker</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Supplier Tracker</h1>
+    <button id="addBtn">Add Supplier</button>
+    <table id="vendorTable">
+      <thead>
+        <tr>
+          <th>Supplier</th>
+          <th>Product</th>
+          <th>Supplier Manager</th>
+          <th>Company</th>
+          <th>Contract Start Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in data %}
+        <tr>
+          <td>{{ row['Supplier'] }}</td>
+          <td>{{ row['Product'] }}</td>
+          <td>{{ row['Supplier Manager'] }}</td>
+          <td>{{ row['Company'] }}</td>
+          <td>{{ row['Contract Start Date'] }}</td>
+          <td><button class="editBtn">Edit</button></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Edit Supplier</h2>
+      <form id="vendorForm">
+        <input type="hidden" id="rowIndex">
+        <label>Supplier:</label><input type="text" id="supplier"><br>
+        <label>Product:</label><input type="text" id="product"><br>
+        <label>Supplier Manager:</label><input type="text" id="manager"><br>
+        <label>Company:</label><input type="text" id="company"><br>
+        <label>Contract Start Date:</label><input type="date" id="startDate"><br>
+        <button type="submit" id="saveBtn">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

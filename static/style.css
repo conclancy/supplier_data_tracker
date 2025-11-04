@@ -1,0 +1,48 @@
+/* style.css (place in static folder) */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+th {
+  background-color: #f2f2f2;
+}
+button {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+}
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
